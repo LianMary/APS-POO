@@ -1,10 +1,14 @@
-package estacionamento.model;
+package estacionamento.poov1.models;
 
 public class Vaga {
 
     private int numero;
     private boolean ocupada;
 
+    public Vaga(){
+
+    }
+    
     public Vaga(int numero) {
         this.numero = numero;
         this.ocupada = false;

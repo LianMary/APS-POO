@@ -1,4 +1,4 @@
-package estacionamento.exception;
+package estacionamento.poov1.exception;
 
 public class VagaIndisponivelException extends Exception {
 

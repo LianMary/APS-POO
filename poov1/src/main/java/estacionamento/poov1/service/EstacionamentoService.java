@@ -1,10 +1,8 @@
-package estacionamento.service;
+package estacionamento.poov1.service;
 
-import estacionamento.enums.TipoVeiculo;
-import estacionamento.exception.VagaIndisponivelException;
-import estacionamento.factory.VeiculoFactory;
-import estacionamento.model.*;
-import estacionamento.strategy.*;
+import estacionamento.poov1.enums.TipoVeiculo;
+import estacionamento.poov1.factory.VeiculoFactory;
+import estacionamento.poov1.models.*;
 
 public class EstacionamentoService {
 
@@ -19,11 +17,7 @@ public class EstacionamentoService {
             String cpf,
             String telefone) {
 
-        Cliente cliente = new Cliente(
-                nome,
-                cpf,
-                telefone
-        );
+        Cliente cliente = new Cliente(nome, cpf, telefone);
 
         estacionamento.adicionarCliente(cliente);
     }

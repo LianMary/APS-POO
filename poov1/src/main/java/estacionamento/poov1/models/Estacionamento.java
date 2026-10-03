@@ -1,6 +1,6 @@
-package estacionamento.model;
+package estacionamento.poov1.models;
 
-import estacionamento.exception.VagaIndisponivelException;
+import estacionamento.poov1.exception.VagaIndisponivelException;
 
 import java.util.*;
 
@@ -45,10 +45,23 @@ public class Estacionamento {
         veiculos.add(veiculo);
     }
 
-    private Vaga encontrarVagaDisponivel()
-            throws VagaIndisponivelException {
+    public Ticket registrarEntrada(Veiculo veiculo)
+        throws VagaIndisponivelException {
 
-        for (Vaga vaga : vagas.values()) {
+    Vaga vaga = encontrarVagaDisponivel();
+
+    vaga.ocupar();
+
+    Ticket ticket = new Ticket(veiculo, vaga);
+
+    tickets.add(ticket);
+
+    return ticket;
+}
+
+    private Vaga encontrarVagaDisponivel() throws VagaIndisponivelException {
+        
+        for ( Vaga vaga : vagas.values()) {
 
             if (!vaga.estaOcupada()) {
                 return vaga;

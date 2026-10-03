@@ -1,7 +1,7 @@
-package estacionamento.model;
+package estacionamento.poov1.models;
 
-import estacionamento.enums.StatusTicket;
-import estacionamento.strategy.EstrategiaTarifa;
+import estacionamento.poov1.enums.StatusTicket;
+import estacionamento.poov1.interfaces.EstrategiaTarifa;
 
 import java.time.LocalDateTime;
 
@@ -16,11 +16,12 @@ public class Ticket {
 
     private EstrategiaTarifa estrategiaTarifa;
 
-    public Ticket(
-            LocalDateTime entrada,
-            Vaga vaga,
-            Veiculo veiculo,
-            EstrategiaTarifa estrategiaTarifa) {
+    public Ticket(Veiculo veiculo, Vaga vaga) {
+    this.veiculo = veiculo;
+    this.vaga = vaga;
+    }
+
+    public Ticket(LocalDateTime entrada, Vaga vaga, Veiculo veiculo, EstrategiaTarifa estrategiaTarifa) {
 
         this.entrada = entrada;
         this.vaga = vaga;

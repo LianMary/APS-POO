@@ -1,9 +1,9 @@
-package estacionamento.factory;
+package estacionamento.poov1.factory;
 
-import estacionamento.enums.TipoVeiculo;
-import estacionamento.model.Carro;
-import estacionamento.model.Moto;
-import estacionamento.model.Veiculo;
+import estacionamento.poov1.enums.TipoVeiculo;
+import estacionamento.poov1.models.Carro;
+import estacionamento.poov1.models.Moto;
+import estacionamento.poov1.models.Veiculo;
 
 public class VeiculoFactory {
 

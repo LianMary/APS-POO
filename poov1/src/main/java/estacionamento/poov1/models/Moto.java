@@ -1,4 +1,4 @@
-package estacionamento.model;
+package estacionamento.poov1.models;
 
 public class Moto extends Veiculo {
 

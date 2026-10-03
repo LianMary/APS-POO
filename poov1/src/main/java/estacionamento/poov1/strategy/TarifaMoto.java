@@ -1,4 +1,6 @@
-package estacionamento.strategy;
+package estacionamento.poov1.strategy;
+
+import estacionamento.poov1.interfaces.EstrategiaTarifa;
 
 public class TarifaMoto implements EstrategiaTarifa {
 

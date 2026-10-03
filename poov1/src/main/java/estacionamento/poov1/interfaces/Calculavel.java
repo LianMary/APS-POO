@@ -1,4 +1,4 @@
-package estacionamento.interfaces;
+package estacionamento.poov1.interfaces;
 
 public interface Calculavel {
 

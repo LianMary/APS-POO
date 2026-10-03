@@ -1,6 +1,6 @@
-package estacionamento.interfaces;
+package estacionamento.poov1.interfaces;
 
 public interface EstrategiaTarifa {
 
-    double calcular(double horas);
+    public double calcular(double horas);
 }

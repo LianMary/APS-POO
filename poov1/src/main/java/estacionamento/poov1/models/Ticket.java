@@ -1,11 +1,12 @@
 package estacionamento.poov1.models;
 
 import estacionamento.poov1.enums.StatusTicket;
+import estacionamento.poov1.interfaces.Calculavel;
 import estacionamento.poov1.interfaces.EstrategiaTarifa;
 
 import java.time.LocalDateTime;
 
-public class Ticket {
+public class Ticket implements Calculavel{
 
     private LocalDateTime entrada;
     private LocalDateTime saida;
@@ -15,11 +16,6 @@ public class Ticket {
     private StatusTicket status;
 
     private EstrategiaTarifa estrategiaTarifa;
-
-    public Ticket(Veiculo veiculo, Vaga vaga) {
-    this.veiculo = veiculo;
-    this.vaga = vaga;
-    }
 
     public Ticket(LocalDateTime entrada, Vaga vaga, Veiculo veiculo, EstrategiaTarifa estrategiaTarifa) {
 

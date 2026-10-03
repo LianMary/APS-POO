@@ -1,7 +1,11 @@
 package estacionamento.poov1.models;
 
 import estacionamento.poov1.exception.VagaIndisponivelException;
+import estacionamento.poov1.interfaces.EstrategiaTarifa;
+import estacionamento.poov1.strategy.TarifaCarro;
+import estacionamento.poov1.strategy.TarifaMoto;
 
+import java.time.LocalDateTime;
 import java.util.*;
 
 public class Estacionamento {
@@ -46,22 +50,30 @@ public class Estacionamento {
     }
 
     public Ticket registrarEntrada(Veiculo veiculo)
-        throws VagaIndisponivelException {
+            throws VagaIndisponivelException {
 
-    Vaga vaga = encontrarVagaDisponivel();
+        Vaga vaga = encontrarVagaDisponivel();
 
-    vaga.ocupar();
+        vaga.ocupar();
+        
+        EstrategiaTarifa estrategia;
 
-    Ticket ticket = new Ticket(veiculo, vaga);
+        if (veiculo instanceof Carro) {
+            estrategia = new TarifaCarro();
+        } else {
+            estrategia = new TarifaMoto();
+        }
 
-    tickets.add(ticket);
+        Ticket ticket = new Ticket(LocalDateTime.now(), vaga, veiculo, estrategia);
 
-    return ticket;
-}
+        tickets.add(ticket);
+
+        return ticket;
+    }
 
     private Vaga encontrarVagaDisponivel() throws VagaIndisponivelException {
-        
-        for ( Vaga vaga : vagas.values()) {
+
+        for (Vaga vaga : vagas.values()) {
 
             if (!vaga.estaOcupada()) {
                 return vaga;
@@ -69,7 +81,6 @@ public class Estacionamento {
         }
 
         throw new VagaIndisponivelException(
-                "Não existem vagas disponíveis."
-        );
+                "Não existem vagas disponíveis.");
     }
 }

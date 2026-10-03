@@ -2,5 +2,5 @@ package estacionamento.poov1.interfaces;
 
 public interface Calculavel {
 
-    double calcularValor(long minutos);
+   public double calcularValor(long minutos);
 }

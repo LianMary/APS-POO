@@ -12,10 +12,7 @@ public class EstacionamentoService {
         this.estacionamento = estacionamento;
     }
 
-    public void cadastrarCliente(
-            String nome,
-            String cpf,
-            String telefone) {
+    public void cadastrarCliente(String nome, String cpf, String telefone) {
 
         Cliente cliente = new Cliente(nome, cpf, telefone);
 
@@ -29,19 +26,20 @@ public class EstacionamentoService {
         estacionamento.adicionarVaga(vaga);
     }
 
-    public Veiculo cadastrarVeiculo(
-            TipoVeiculo tipo,
-            String placa,
-            String modelo,
-            String marca) {
+    public Veiculo cadastrarVeiculo(TipoVeiculo tipo, String placa, String modelo, String marca) {
 
-        Veiculo veiculo = VeiculoFactory.criarVeiculo(
-                tipo,
-                placa,
-                modelo,
-                marca
-        );
+        Veiculo veiculo = VeiculoFactory.criarVeiculo(tipo, placa, modelo, marca);
 
+        estacionamento.adicionarVeiculo(veiculo);
+        
         return veiculo;
+    }
+
+    public void registrarEntrada() {
+
+    }
+
+    public void registrarSaida() {
+
     }
 }

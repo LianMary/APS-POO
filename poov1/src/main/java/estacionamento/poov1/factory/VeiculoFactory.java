@@ -7,11 +7,7 @@ import estacionamento.poov1.models.Veiculo;
 
 public class VeiculoFactory {
 
-    public static Veiculo criarVeiculo(
-            TipoVeiculo tipo,
-            String placa,
-            String modelo,
-            String marca) {
+    public static Veiculo criarVeiculo(TipoVeiculo tipo, String placa, String modelo, String marca) {
 
         switch (tipo) {
 

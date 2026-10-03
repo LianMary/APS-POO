@@ -8,7 +8,7 @@ public class Vaga {
     public Vaga(){
 
     }
-    
+
     public Vaga(int numero) {
         this.numero = numero;
         this.ocupada = false;
@@ -28,5 +28,9 @@ public class Vaga {
 
     public int getNumero() {
         return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
 }

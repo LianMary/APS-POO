@@ -5,6 +5,17 @@ public abstract class Veiculo {
     private String modelo;
     private String marca;
 
+    public Veiculo() {
+    }
+
+    public Veiculo(String placa, String modelo, String marca) {
+        this.placa = placa;
+        this.modelo = modelo;
+        this.marca = marca;
+    }
+
+    public abstract double calcularValorHora();
+
     public String getPlaca() {
         return placa;
     }

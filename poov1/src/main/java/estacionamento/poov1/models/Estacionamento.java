@@ -55,7 +55,7 @@ public class Estacionamento {
         Vaga vaga = encontrarVagaDisponivel();
 
         vaga.ocupar();
-        
+
         EstrategiaTarifa estrategia;
 
         if (veiculo instanceof Carro) {

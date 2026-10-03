@@ -1,6 +1,9 @@
 package estacionamento.poov1.service;
 
+import java.time.LocalDateTime;
+
 import estacionamento.poov1.enums.TipoVeiculo;
+import estacionamento.poov1.exception.VagaIndisponivelException;
 import estacionamento.poov1.factory.VeiculoFactory;
 import estacionamento.poov1.models.*;
 
@@ -31,15 +34,17 @@ public class EstacionamentoService {
         Veiculo veiculo = VeiculoFactory.criarVeiculo(tipo, placa, modelo, marca);
 
         estacionamento.adicionarVeiculo(veiculo);
-        
+
         return veiculo;
     }
 
-    public void registrarEntrada() {
+    public Ticket registrarEntrada(Veiculo veiculo) throws VagaIndisponivelException {
 
+        return estacionamento.registrarEntrada(veiculo);
     }
 
-    public void registrarSaida() {
+    public void registrarSaida(Ticket ticket) {
+        ticket.registrarSaida(LocalDateTime.now());
 
     }
 }
